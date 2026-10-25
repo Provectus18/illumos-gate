@@ -308,3 +308,30 @@ if [[ "$ENABLE_SMATCH" == "1" ]]; then
 	SMATCHBIN=$CODEMGR_WS/usr/src/tools/proto/root_$MACH-nd/opt/onbld/bin/$MACH/smatch
 	export SHADOW_CCS="$SHADOW_CCS smatch,$SMATCHBIN,smatch"
 fi
+
+# Set to the current perl version (this is correct for OmniOS r151028)
+export PERL_VERSION=5.28
+export PERL_ARCH=i86pc-solaris-thread-multi-64int
+export PERL_PKGVERS=
+
+# Set to current python3 version (this is correct for OmniOS r151028)
+export PYTHON3=/usr/bin/python3.5
+export TOOLS_PYTHON=$PYTHON3
+
+export SPRO_ROOT=/opt/sunstudio12.1
+export SPRO_VROOT="$SPRO_ROOT"
+export ONLY_LINT_DEFS="-I${SPRO_ROOT}/sunstudio12.1/prod/include/lint"
+export ON_CLOSED_BINS=/opt/onbld/closed
+
+export __GNUC=
+export GNUC_ROOT=/opt/gcc-10/
+export PRIMARY_CC=gcc10,/opt/gcc-10/bin/gcc,gnu
+export PRIMARY_CCC=gcc10,/opt/gcc-10/bin/g++,gnu
+export SHADOW_CCS=gcc14,/opt/gcc-14/bin/gcc,gnu
+export SHADOW_CCCS=gcc14,/opt/gcc-14/bin/g++,gnu
+
+SMATCHBIN=$CODEMGR_WS/usr/src/tools/proto/root_$MACH-nd/opt/onbld/bin/$MACH/smatch
+export SHADOW_CCS="$SHADOW_CCS smatch,$SMATCHBIN,smatch"
+
+# This will set PKGVERS_BRANCH to match the release on which you are building, allowing ONU.
+export PKGVERS_BRANCH=$(grep '^VERSION=r' /etc/os-release | cut -c10-).0
