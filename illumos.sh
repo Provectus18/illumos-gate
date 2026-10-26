@@ -309,7 +309,7 @@ export PERL_ARCH=i86pc-solaris-thread-multi-64int
 export PERL_PKGVERS=
 
 # Set to current python3 version (this is correct for OmniOS r151028)
-export PYTHON3=/usr/bin/python3.5
+export PYTHON3=/usr/bin/python3.13
 export TOOLS_PYTHON=$PYTHON3
 
 export SPRO_ROOT=/opt/sunstudio12.1
