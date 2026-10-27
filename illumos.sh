@@ -325,9 +325,3 @@ export PRIMARY_CC=gcc10,/opt/gcc-10/bin/gcc,gnu
 export PRIMARY_CCC=gcc10,/opt/gcc-10/bin/g++,gnu
 export SHADOW_CCS=gcc14,/opt/gcc-14/bin/gcc,gnu
 export SHADOW_CCCS=gcc14,/opt/gcc-14/bin/g++,gnu
-
-SMATCHBIN=$CODEMGR_WS/usr/src/tools/proto/root_$MACH-nd/opt/onbld/bin/$MACH/smatch
-export SHADOW_CCS="$SHADOW_CCS smatch,$SMATCHBIN,smatch"
-
-# This will set PKGVERS_BRANCH to match the release on which you are building, allowing ONU.
-export PKGVERS_BRANCH=$(grep '^VERSION=r' /etc/os-release | cut -c10-).0
