@@ -304,8 +304,7 @@ if [[ "$ENABLE_SMATCH" == "1" ]]; then
 fi
 
 # Set to the current perl version (this is correct for OmniOS r151028)
-export PERL_VERSION=5.42.2
-export PERL_ARCH=i86pc-solaris-thread-multi-64int
+export PERL_VERSION=5.42
 export PERL_PKGVERS=-542
 
 # Set to current python3 version (this is correct for OmniOS r151028)
