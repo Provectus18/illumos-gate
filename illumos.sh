@@ -294,6 +294,12 @@ export MAKEFLAGS='ke'
 export BUILD_TOOLS='/opt'
 #export ONBLD_TOOLS='/opt/onbld'
 
+export __GNUC=
+export GNUC_ROOT=/opt/gcc-10/
+export PRIMARY_CC=gcc10,/opt/gcc-10/bin/gcc,gnu
+export PRIMARY_CCC=gcc10,/opt/gcc-10/bin/g++,gnu
+export SHADOW_CCS=gcc14,/opt/gcc-14/bin/gcc,gnu
+export SHADOW_CCCS=gcc14,/opt/gcc-14/bin/g++,gnu
 # Set this flag to 'n' to disable the use of 'checkpaths'.  The default,
 # if the 'N' option is not specified, is to run this test.
 #CHECK_PATHS='y'
@@ -322,10 +328,3 @@ export SPRO_ROOT=/opt/sunstudio12.1
 export SPRO_VROOT="$SPRO_ROOT"
 export ONLY_LINT_DEFS="-I${SPRO_ROOT}/sunstudio12.1/prod/include/lint"
 export ON_CLOSED_BINS=/opt/onbld/closed
-
-export __GNUC=
-export GNUC_ROOT=/opt/gcc-10/
-export PRIMARY_CC=gcc10,/opt/gcc-10/bin/gcc,gnu
-export PRIMARY_CCC=gcc10,/opt/gcc-10/bin/g++,gnu
-export SHADOW_CCS=gcc14,/opt/gcc-14/bin/gcc,gnu
-export SHADOW_CCCS=gcc14,/opt/gcc-14/bin/g++,gnu
