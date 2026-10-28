@@ -309,14 +309,15 @@ if [[ "$ENABLE_SMATCH" == "1" ]]; then
 	export SHADOW_CCS="$SHADOW_CCS smatch,$SMATCHBIN,smatch"
 fi
 
-# Set to the current perl version (this is correct for OmniOS r151028)
-PERL='/usr/perl5/bin/perl'
-export PERL_VERSION="$($PERL -e 'print $^V =~ /^v(5\.[^\.]*).*$/')"
-export PERL_PKGVERS="$($PERL -e 'print "-", $^V =~ /^v(5)\.([^\.]*).*$/')"
-export PERL_ARCH="$($PERL -MConfig -e 'print $Config{archname}')"
-export PERL_ARCH64="$PERL_ARCH"
-export BUILDPERL32="$($PERL -MConfig -e 'print $Config{ptrsize} == 4 ? "" : "#"')"
-export BUILDPERL64="$($PERL -MConfig -e 'print $Config{ptrsize} == 8 ? "" : "#"')"
+# Explicit configuration based on system layout
+export PERL_VERSION=5.42
+export PERL_PKGVERS=-542
+export PERL_ARCH=i86pc-solaris-thread-multi-64
+export PERL_ARCH64=i86pc-solaris-thread-multi-64
+
+# Disable 32-bit/64-bit module builds to prevent pathing into non-existent i386 dirs
+export BUILDPERL32='#'
+export BUILDPERL64='#'
 
 # Set to current python3 version (this is correct for OmniOS r151028)
 export PYTHON3_VERSION=3.13
